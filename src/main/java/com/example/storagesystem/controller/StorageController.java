@@ -26,6 +26,6 @@ public class StorageController {
 
     @GetMapping("download/{fileName}")
     public ResponseEntity<?> downloadImage(@PathVariable String fileName) throws DataFormatException, IOException {
-        return ResponseEntity.status(HttpStatus.FOUND).contentType(MediaType.valueOf("image/png")).body(storageService.downloadImage(fileName));
+        return ResponseEntity.status(HttpStatus.FOUND).contentType(MediaType.IMAGE_PNG).body(storageService.downloadImage(fileName));
     }
 }
